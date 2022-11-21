@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+	<h1>Discover</h1>
+    	{% for discover in object_list %}
+			<li><h5>{{discover.cname}} (disease code = {{discover.disease_code}})</h5></li>
+		{% endfor %}
+{% endblock %}
