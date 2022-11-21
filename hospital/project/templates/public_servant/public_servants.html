@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+<a href="/add-public-servant/">Add new public-servant</a>
+	<h1>Public servant</h1>
+    	{% for public_servant in object_list %}
+			<li><h5>{{public_servant.email}} - {{public_servant.department}} - <a href="/update-public-servant/{{public_servant.email}}">Update</a> - <a href="/delete-public-servant/{{public_servant.email}}">Delete</a></h5></li>
+		{% endfor %}
+{% endblock %}

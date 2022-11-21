@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+<a href="/add-disease/">Add new disease</a>
+	<h1>Disease Types</h1>
+    	{% for disease in object_list %}
+			<li><h5>{{disease.description}} (disease code = {{disease.disease_code}}) - <a href="/update-disease/{{disease.disease_code}}">Update</a> - <a href="/delete-disease/{{disease.disease_code}}">Delete</a></h5></li>
+		{% endfor %}
+{% endblock %}
